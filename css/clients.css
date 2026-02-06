@@ -1,0 +1,76 @@
+/* Clients Section */
+.clients {
+  padding: 8rem 2rem;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.clients-carousel {
+  display: inline;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.clients-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: max-content;
+}
+
+.clients-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.client-logo {
+  flex-shrink: 0;
+  background: white;
+  padding: 2rem 3rem;
+  margin: 0 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+[data-theme="dark"] .client-logo {
+  background: var(--bg-light);
+}
+
+.client-logo:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.client-logo h4 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  text-align: center;
+  margin: 0;
+}
+
+.client-logo p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  text-align: center;
+  margin: 0;
+}
+
+.client-icon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
