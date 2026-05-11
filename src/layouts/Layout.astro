@@ -1,12 +1,43 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "SubtilAzul - Juntos hoje, pelo futuro do seu espaco",
+  description = "Higienizacao profissional de alcatifas, estofos e mobiliario. Preservacao preventiva com foco na sustentabilidade e saude.",
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="pt">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/components.css" />
+		<link rel="stylesheet" href="/css/hero.css" />
+		<link rel="stylesheet" href="/css/services.css" />
+		<link rel="stylesheet" href="/css/showcase.css" />
+		<link rel="stylesheet" href="/css/benefits.css" />
+		<link rel="stylesheet" href="/css/clients.css" />
+		<link rel="stylesheet" href="/css/contact.css" />
 	</head>
 	<body>
 		<slot />

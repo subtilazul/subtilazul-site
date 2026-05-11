@@ -1,0 +1,46 @@
+<section id="contacto" class="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Entre em Contacto</h2>
+      <p class="section-subtitle">Avaliacao gratuita e sem compromisso. Vamos trabalhar juntos!</p>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Informacoes de Contacto</h3>
+        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true"><svg class="icon"><use href="#icon-mail"></use></svg></div><div class="contact-item-content"><h4>Email</h4><a href="mailto:geral@subtilazul.pt">geral@subtilazul.pt</a></div></div>
+        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true"><svg class="icon"><use href="#icon-pin"></use></svg></div><div class="contact-item-content"><h4>Localizacao</h4><p>Vila do Conde, Porto<br />Atuamos em todo o Norte de Portugal</p></div></div>
+        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true"><svg class="icon"><use href="#icon-globe"></use></svg></div><div class="contact-item-content"><h4>Website</h4><a href="http://www.subtilazul.com" target="_blank">www.subtilazul.com</a></div></div>
+        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true"><svg class="icon"><use href="#icon-clock"></use></svg></div><div class="contact-item-content"><h4>Horario</h4><p>Segunda a Sexta: 9h - 18h<br />Disponiveis para agendamentos</p></div></div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Solicite uma Avaliacao</h3>
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="ab4e72ad-88c9-4ca9-86a8-2550b120a61b" />
+          <input type="hidden" name="subject" value="Nova Solicitacao - SubtilAzul" />
+          <input type="hidden" name="from_name" value="Website SubtilAzul" />
+
+          <div class="form-group"><label for="name">Nome *</label><input type="text" id="name" name="name" required /></div>
+          <div class="form-group"><label for="company">Empresa/Instituicao *</label><input type="text" id="company" name="company" required /></div>
+          <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required /></div>
+          <div class="form-group"><label for="phone">Telefone</label><input type="tel" id="phone" name="phone" /></div>
+          <div class="form-group">
+            <label for="service">Servico de Interesse *</label>
+            <select id="service" name="service" required>
+              <option value="">Selecione um servico</option>
+              <option value="alcatifas">Alcatifas</option>
+              <option value="cadeiras">Cadeiras / Mobiliario Estofado</option>
+              <option value="colchoes">Colchoes</option>
+              <option value="varios">Varios Servicos</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="message">Mensagem</label><textarea id="message" name="message" rows="4" placeholder="Descreva brevemente as suas necessidades..."></textarea></div>
+
+          <button type="submit" class="form-submit">Enviar Pedido</button>
+          <div id="successMessage" class="success-message">? Mensagem enviada com sucesso! Entraremos em contacto em breve.</div>
+          <div id="errorMessage" class="success-message error-message">Ocorreu um erro ao enviar. Tente novamente em instantes.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
