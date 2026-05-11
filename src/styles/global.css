@@ -1,1 +1,66 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
+
+:root {
+  --brand: #0f6a73;
+  --brand-dark: #0a3f47;
+  --ink: #0f2529;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% -5%, rgba(56, 189, 248, 0.14), transparent 32%),
+    radial-gradient(circle at 92% 8%, rgba(13, 148, 136, 0.12), transparent 34%),
+    linear-gradient(180deg, #f8fcfc 0%, #f1f8f8 38%, #ffffff 100%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.01em;
+}
+
+section {
+  scroll-margin-top: 88px;
+}
+
+#navbar.scrolled {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(15, 37, 41, 0.08);
+}
+
+.success-message {
+  display: none;
+}
+
+.success-message.show {
+  display: block;
+}
+
+.error-message {
+  color: #b42318;
+}
+
+.ba-dot {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 999px;
+  background: #cbd5e1;
+  transition: all 200ms ease;
+}
+
+.ba-dot.active {
+  width: 1.5rem;
+  background: var(--brand);
+}
+

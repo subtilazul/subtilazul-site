@@ -1,46 +1,49 @@
-<section id="contacto" class="contact">
-  <div class="container">
-    <div class="section-title">
-      <h2>Entre em Contacto</h2>
-      <p class="section-subtitle">Avaliacao gratuita e sem compromisso. Vamos trabalhar juntos!</p>
+﻿<section id="contacto" class="flex items-center"><div class="mx-auto w-full max-w-6xl px-4 py-20 md:px-6">
+  <div class="mb-10 text-center">
+    <h2 class="text-4xl text-slate-900 md:text-5xl">Entre em Contacto</h2>
+    <p class="mx-auto mt-3 max-w-2xl text-slate-600">Avaliação gratuita e sem compromisso. Vamos trabalhar juntos!</p>
+  </div>
+
+  <div class="grid gap-8 md:grid-cols-2">
+    <div class="space-y-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h3 class="text-3xl text-slate-900">Informações de Contacto</h3>
+      <p class="text-sm text-slate-700"><span class="font-semibold">Email:</span> <a href="mailto:geral@subtilazul.pt" class="text-cyan-700">geral@subtilazul.pt</a></p>
+      <p class="text-sm text-slate-700"><span class="font-semibold">Localização:</span> Vila do Conde, Porto<br />Atuamos em todo o Norte de Portugal</p>
+      <p class="text-sm text-slate-700"><span class="font-semibold">Website:</span> <a href="http://www.subtilazul.com" target="_blank" class="text-cyan-700">www.subtilazul.com</a></p>
+      <p class="text-sm text-slate-700"><span class="font-semibold">Horário:</span> Segunda a Sexta, 9h - 18h</p>
     </div>
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Informacoes de Contacto</h3>
-        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true"><svg class="icon"><use href="#icon-mail"></use></svg></div><div class="contact-item-content"><h4>Email</h4><a href="mailto:geral@subtilazul.pt">geral@subtilazul.pt</a></div></div>
-        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true"><svg class="icon"><use href="#icon-pin"></use></svg></div><div class="contact-item-content"><h4>Localizacao</h4><p>Vila do Conde, Porto<br />Atuamos em todo o Norte de Portugal</p></div></div>
-        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true"><svg class="icon"><use href="#icon-globe"></use></svg></div><div class="contact-item-content"><h4>Website</h4><a href="http://www.subtilazul.com" target="_blank">www.subtilazul.com</a></div></div>
-        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true"><svg class="icon"><use href="#icon-clock"></use></svg></div><div class="contact-item-content"><h4>Horario</h4><p>Segunda a Sexta: 9h - 18h<br />Disponiveis para agendamentos</p></div></div>
-      </div>
 
-      <div class="contact-form">
-        <h3>Solicite uma Avaliacao</h3>
-        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="ab4e72ad-88c9-4ca9-86a8-2550b120a61b" />
-          <input type="hidden" name="subject" value="Nova Solicitacao - SubtilAzul" />
-          <input type="hidden" name="from_name" value="Website SubtilAzul" />
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h3 class="text-3xl text-slate-900">Solicite uma Avaliação</h3>
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="mt-4 space-y-4">
+        <input type="hidden" name="access_key" value="ab4e72ad-88c9-4ca9-86a8-2550b120a61b" />
+        <input type="hidden" name="subject" value="Nova Solicitacao - SubtilAzul" />
+        <input type="hidden" name="from_name" value="Website SubtilAzul" />
 
-          <div class="form-group"><label for="name">Nome *</label><input type="text" id="name" name="name" required /></div>
-          <div class="form-group"><label for="company">Empresa/Instituicao *</label><input type="text" id="company" name="company" required /></div>
-          <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required /></div>
-          <div class="form-group"><label for="phone">Telefone</label><input type="tel" id="phone" name="phone" /></div>
-          <div class="form-group">
-            <label for="service">Servico de Interesse *</label>
-            <select id="service" name="service" required>
-              <option value="">Selecione um servico</option>
-              <option value="alcatifas">Alcatifas</option>
-              <option value="cadeiras">Cadeiras / Mobiliario Estofado</option>
-              <option value="colchoes">Colchoes</option>
-              <option value="varios">Varios Servicos</option>
-            </select>
-          </div>
-          <div class="form-group"><label for="message">Mensagem</label><textarea id="message" name="message" rows="4" placeholder="Descreva brevemente as suas necessidades..."></textarea></div>
+        <label class="block text-sm font-medium text-slate-700">Nome *<input type="text" id="name" name="name" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-cyan-700 focus:ring" /></label>
+        <label class="block text-sm font-medium text-slate-700">Empresa/Instituição *<input type="text" id="company" name="company" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-cyan-700 focus:ring" /></label>
+        <label class="block text-sm font-medium text-slate-700">Email *<input type="email" id="email" name="email" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-cyan-700 focus:ring" /></label>
+        <label class="block text-sm font-medium text-slate-700">Telefone<input type="tel" id="phone" name="phone" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-cyan-700 focus:ring" /></label>
+        <label class="block text-sm font-medium text-slate-700">Serviço de Interesse *
+          <select id="service" name="service" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-cyan-700 focus:ring">
+            <option value="">Selecione um serviço</option>
+            <option value="alcatifas">Alcatifas</option>
+            <option value="cadeiras">Cadeiras / Mobiliário Estofado</option>
+            <option value="colchoes">Colchões</option>
+            <option value="varios">Vários Serviços</option>
+          </select>
+        </label>
+        <label class="block text-sm font-medium text-slate-700">Mensagem<textarea id="message" name="message" rows="4" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none ring-cyan-700 focus:ring" placeholder="Descreva brevemente as suas necessidades..."></textarea></label>
 
-          <button type="submit" class="form-submit">Enviar Pedido</button>
-          <div id="successMessage" class="success-message">? Mensagem enviada com sucesso! Entraremos em contacto em breve.</div>
-          <div id="errorMessage" class="success-message error-message">Ocorreu um erro ao enviar. Tente novamente em instantes.</div>
-        </form>
-      </div>
+        <button type="submit" class="w-full rounded-full bg-cyan-700 shadow-sm shadow-cyan-900/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-cyan-800">Enviar Pedido</button>
+        <div id="successMessage" class="success-message rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-700">Mensagem enviada com sucesso! Entraremos em contacto em breve.</div>
+        <div id="errorMessage" class="success-message error-message rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm">Ocorreu um erro ao enviar. Tente novamente em instantes.</div>
+      </form>
     </div>
   </div>
-</section>
+</div></section>
+
+
+
+
+

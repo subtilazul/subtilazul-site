@@ -1,37 +1,36 @@
-<section id="clientes" class="clients">
-  <div class="container">
-    <div class="section-title">
-      <h2>Confiam em Nos</h2>
-      <p class="section-subtitle">Uma carteira construida com dedicacao, competencia e confianca</p>
-    </div>
-    <div class="clients-carousel">
-      <div class="clients-track">
-        <div class="client-logo"><h4>IPCA</h4><p>Instituto Politecnico do Cavado e do Ave</p></div>
-        <div class="client-logo"><h4>Hospital de Braga</h4><p>USL de Braga</p></div>
-        <div class="client-logo"><h4>Palacio da Bolsa</h4><p>Associacao Comercial do Porto</p></div>
-        <div class="client-logo"><h4>Forum Braga</h4><p>Invest Braga</p></div>
-        <div class="client-logo"><h4>Municipio de Braga</h4><p>Gabinete da Presidencia</p></div>
-        <div class="client-logo"><h4>Batalha Centro de Cinema</h4><p>Porto</p></div>
-        <div class="client-logo"><h4>Centro Cultural Vila Flor</h4><p>Guimaraes</p></div>
-        <div class="client-logo"><h4>Casa das Artes</h4><p>Vila Nova de Famalicao</p></div>
-        <div class="client-logo"><h4>Teatro Gil Vicente</h4><p>Municipio de Barcelos</p></div>
-        <div class="client-logo"><h4>Zuhlke Group</h4><p>Porto</p></div>
-        <div class="client-logo"><h4>Proef</h4><p>Eurico Ferreira Portugal S.A.</p></div>
-        <div class="client-logo"><h4>Espaco Vita</h4><p>Arquidiocese de Braga</p></div>
+﻿---
+const logos = [
+  ["IPCA", "Instituto Politécnico do Cávado e do Ave"],
+  ["Hospital de Braga", "USL de Braga"],
+  ["Palacio da Bolsa", "Associação Comercial do Porto"],
+  ["Forum Braga", "Invest Braga"],
+  ["Município de Braga", "Gabinete da Presidência"],
+  ["Batalha Centro de Cinema", "Porto"],
+  ["Centro Cultural Vila Flor", "Guimarães"],
+  ["Casa das Artes", "Vila Nova de Famalicão"],
+  ["Teatro Gil Vicente", "Município de Barcelos"],
+  ["Zuhlke Group", "Porto"],
+  ["Proef", "Eurico Ferreira Portugal S.A."],
+  ["Espaço Vita", "Arquidiocese de Braga"],
+];
+---
 
-        <div class="client-logo"><h4>IPCA</h4><p>Instituto Politecnico do Cavado e do Ave</p></div>
-        <div class="client-logo"><h4>Hospital de Braga</h4><p>USL de Braga</p></div>
-        <div class="client-logo"><h4>Palacio da Bolsa</h4><p>Associacao Comercial do Porto</p></div>
-        <div class="client-logo"><h4>Forum Braga</h4><p>Invest Braga</p></div>
-        <div class="client-logo"><h4>Municipio de Braga</h4><p>Gabinete da Presidencia</p></div>
-        <div class="client-logo"><h4>Batalha Centro de Cinema</h4><p>Porto</p></div>
-        <div class="client-logo"><h4>Centro Cultural Vila Flor</h4><p>Guimaraes</p></div>
-        <div class="client-logo"><h4>Casa das Artes</h4><p>Vila Nova de Famalicao</p></div>
-        <div class="client-logo"><h4>Teatro Gil Vicente</h4><p>Municipio de Barcelos</p></div>
-        <div class="client-logo"><h4>Zuhlke Group</h4><p>Porto</p></div>
-        <div class="client-logo"><h4>Proef</h4><p>Eurico Ferreira Portugal S.A.</p></div>
-        <div class="client-logo"><h4>Espaco Vita</h4><p>Arquidiocese de Braga</p></div>
-      </div>
-    </div>
+<section id="clientes" class="flex min-h-[85svh] md:min-h-[100svh] items-center"><div class="mx-auto w-full max-w-6xl px-4 py-20 md:px-6">
+  <div class="mb-10 text-center">
+    <h2 class="text-4xl text-slate-900 md:text-5xl">Confiam em Nós</h2>
+    <p class="mx-auto mt-3 max-w-2xl text-slate-600">Uma carteira construida com dedicação, competência e confiança</p>
   </div>
-</section>
+
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {logos.map(([name, info]) => (
+      <article class="rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-sm">
+        <h4 class="text-xl text-slate-900">{name}</h4>
+        <p class="mt-1 text-sm text-slate-600">{info}</p>
+      </article>
+    ))}
+  </div>
+</div></section>
+
+
+
+

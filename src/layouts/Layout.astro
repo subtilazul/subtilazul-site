@@ -1,4 +1,4 @@
----
+﻿---
 import "../styles/global.css";
 
 interface Props {
@@ -7,9 +7,12 @@ interface Props {
 }
 
 const {
-  title = "SubtilAzul - Juntos hoje, pelo futuro do seu espaco",
-  description = "Higienizacao profissional de alcatifas, estofos e mobiliario. Preservacao preventiva com foco na sustentabilidade e saude.",
+  title = "SubtilAzul - Juntos hoje, pelo futuro do seu espaço",
+  description = "Higienização profissional de alcatifas, estofos e mobiliário. Preservação preventiva com foco na sustentabilidade e saúde.",
 } = Astro.props;
+
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString();
+const ogImage = "/images/hero/subtilazul_hero.webp";
 ---
 
 <!doctype html>
@@ -22,6 +25,20 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<meta name="robots" content="index,follow" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="pt_PT" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={ogImage} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,18 +46,11 @@ const {
 			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
-
-		<link rel="stylesheet" href="/css/style.css" />
-		<link rel="stylesheet" href="/css/components.css" />
-		<link rel="stylesheet" href="/css/hero.css" />
-		<link rel="stylesheet" href="/css/services.css" />
-		<link rel="stylesheet" href="/css/showcase.css" />
-		<link rel="stylesheet" href="/css/benefits.css" />
-		<link rel="stylesheet" href="/css/clients.css" />
-		<link rel="stylesheet" href="/css/contact.css" />
 	</head>
 	<body>
-		<slot />
+		<div class="flex flex-col min-h-screen">
+			<slot />
+		</div>
 	</body>
 </html>
 

@@ -1,21 +1,35 @@
-<nav id="navbar">
-  <div class="nav-container">
-    <a href="#" class="logo">SUBTILAZUL</a>
-    <ul class="nav-links">
-      <li><a href="#servicos">Servicos</a></li>
-      <li><a href="#beneficios">Beneficios</a></li>
-      <li><a href="#before-after">Resultados</a></li>
-      <li><a href="#clientes">Clientes</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+<nav id="navbar" class="sticky top-0 z-50 border-b border-white/60 bg-white/80 transition-all duration-300">
+  <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+    <a href="#" class="text-xl font-semibold tracking-[0.22em] text-slate-900">SÚBTILAZUL</a>
+
+    <ul class="hidden items-center gap-7 text-sm font-medium text-slate-700 lg:flex">
+      <li><a href="#servicos" class="transition hover:text-cyan-700">Serviços</a></li>
+      <li><a href="#beneficios" class="transition hover:text-cyan-700">Benefícios</a></li>
+      <li><a href="#before-after" class="transition hover:text-cyan-700">Resultados</a></li>
+      <li><a href="#clientes" class="transition hover:text-cyan-700">Clientes</a></li>
+      <li><a href="#contacto" class="transition hover:text-cyan-700">Contacto</a></li>
     </ul>
-    <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-      <span class="theme-icon">??</span>
-    </button>
-    <a href="#contacto" class="nav-cta">Avaliacao Gratuita</a>
-    <button class="mobile-menu-btn" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+
+    <div class="flex items-center gap-2 md:gap-3">
+      <button id="themeToggle" class="theme-toggle inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-lg text-slate-700 transition hover:-translate-y-0.5 hover:border-cyan-700 hover:text-cyan-700" aria-label="Alternar tema">
+        <span class="theme-icon">??</span>
+      </button>
+      <a href="#contacto" class="hidden rounded-full bg-cyan-700 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-cyan-900/20 transition hover:-translate-y-0.5 hover:bg-cyan-800 sm:inline-flex">Avaliação Gratuita</a>
+      <button id="mobileMenuBtn" class="mobile-menu-btn inline-flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-slate-300 lg:hidden" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="block h-0.5 w-5 bg-slate-700"></span>
+        <span class="block h-0.5 w-5 bg-slate-700"></span>
+        <span class="block h-0.5 w-5 bg-slate-700"></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white/95 lg:hidden">
+    <div class="mx-auto flex w-full max-w-6xl flex-col gap-1 px-4 py-4 text-sm font-medium text-slate-700">
+      <a href="#servicos" class="rounded-lg px-3 py-2 hover:bg-slate-100">Serviços</a>
+      <a href="#beneficios" class="rounded-lg px-3 py-2 hover:bg-slate-100">Benefícios</a>
+      <a href="#before-after" class="rounded-lg px-3 py-2 hover:bg-slate-100">Resultados</a>
+      <a href="#clientes" class="rounded-lg px-3 py-2 hover:bg-slate-100">Clientes</a>
+      <a href="#contacto" class="rounded-lg px-3 py-2 hover:bg-slate-100">Contacto</a>
+    </div>
   </div>
 </nav>

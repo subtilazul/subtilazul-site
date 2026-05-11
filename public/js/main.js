@@ -1,35 +1,59 @@
-// Dark mode toggle
+﻿// Theme toggle
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon = document.querySelector(".theme-icon");
 const htmlElement = document.documentElement;
 
-// Check for saved theme preference or default to light mode
 const currentTheme = localStorage.getItem("theme") || "light";
 htmlElement.setAttribute("data-theme", currentTheme);
 updateThemeIcon(currentTheme);
 
-themeToggle.addEventListener("click", function () {
-  const current = htmlElement.getAttribute("data-theme");
-  const newTheme = current === "light" ? "dark" : "light";
-
-  htmlElement.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
-  updateThemeIcon(newTheme);
-});
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const current = htmlElement.getAttribute("data-theme");
+    const next = current === "light" ? "dark" : "light";
+    htmlElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    updateThemeIcon(next);
+  });
+}
 
 function updateThemeIcon(theme) {
+  if (!themeIcon) return;
   themeIcon.textContent = theme === "light" ? "🌙" : "☀️";
 }
 
 // Navbar scroll effect
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", () => {
   const navbar = document.getElementById("navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
+  if (!navbar) return;
+  navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
+
+// Mobile menu
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+function closeMobileMenu() {
+  if (!mobileMenu || !mobileMenuBtn) return;
+  mobileMenu.classList.add("hidden");
+  mobileMenuBtn.setAttribute("aria-expanded", "false");
+}
+
+if (mobileMenuBtn && mobileMenu) {
+  mobileMenuBtn.addEventListener("click", () => {
+    const willOpen = mobileMenu.classList.contains("hidden");
+    mobileMenu.classList.toggle("hidden", !willOpen);
+    mobileMenuBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+  });
+
+  mobileMenu.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024) closeMobileMenu();
+  });
+}
 
 // Form submission (Web3Forms)
 const form = document.getElementById("contactForm");
@@ -39,7 +63,7 @@ const errorMessage = document.getElementById("errorMessage");
 if (form) {
   const submitButton = form.querySelector('button[type="submit"]');
 
-  form.addEventListener("submit", async function (e) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     successMessage?.classList.remove("show");
@@ -56,23 +80,16 @@ if (form) {
       const response = await fetch(form.action, {
         method: form.method,
         body: formData,
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       });
 
-      if (!response.ok) {
-        throw new Error("Request failed");
-      }
-
+      if (!response.ok) throw new Error("Request failed");
       const data = await response.json();
+
       if (data?.success) {
         successMessage?.classList.add("show");
         form.reset();
-
-        setTimeout(() => {
-          successMessage?.classList.remove("show");
-        }, 5000);
+        setTimeout(() => successMessage?.classList.remove("show"), 5000);
       } else {
         throw new Error("Submission error");
       }
@@ -81,121 +98,67 @@ if (form) {
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.textContent =
-          submitButton.dataset.originalText || "Enviar Pedido";
+        submitButton.textContent = submitButton.dataset.originalText || "Enviar Pedido";
       }
     }
   });
 }
 
-// Smooth scroll for navigation links
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
+    const href = this.getAttribute("href");
+    if (!href || href === "#") return;
+
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
+    const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
 });
 
-// ================================
-// Slider Antes/Depois com conjuntos
-// ================================
+// Before/After slider
 const ba = document.getElementById("ba");
 const baBefore = ba?.querySelector(".ba-before");
 const baAfter = ba?.querySelector(".ba-after");
 const baHandle = ba?.querySelector(".ba-handle");
-
 const baPrev = document.getElementById("baPrev");
 const baNext = document.getElementById("baNext");
 const baDots = document.getElementById("baDots");
 
-// Define aqui os teus conjuntos
 const BA_SETS = [
-  {
-    before: "images/showcase/a1.webp",
-    after: "images/showcase/a2.webp",
-    label: "Exemplo A",
-  },
-  {
-    before: "images/showcase/b1.webp",
-    after: "images/showcase/b2.webp",
-    label: "Exemplo B",
-  },
-  {
-    before: "images/showcase/c1.webp",
-    after: "images/showcase/c2.webp",
-    label: "Exemplo C",
-  },
-  {
-    before: "images/showcase/d1.webp",
-    after: "images/showcase/d2.webp",
-    label: "Exemplo D",
-  },
-  {
-    before: "images/showcase/e1.webp",
-    after: "images/showcase/e2.webp",
-    label: "Exemplo E",
-  },
-  {
-    before: "images/showcase/f1.webp",
-    after: "images/showcase/f2.webp",
-    label: "Exemplo F",
-  },
-  {
-    before: "images/showcase/g1.webp",
-    after: "images/showcase/g2.webp",
-    label: "Exemplo G",
-  },
-  {
-    before: "images/showcase/h1.webp",
-    after: "images/showcase/h2.webp",
-    label: "Exemplo H",
-  },
-  {
-    before: "images/showcase/i1.webp",
-    after: "images/showcase/i2.webp",
-    label: "Exemplo I",
-  },
-  {
-    before: "images/showcase/j1.webp",
-    after: "images/showcase/j2.webp",
-    label: "Exemplo J",
-  },
-  {
-    before: "images/showcase/k1.webp",
-    after: "images/showcase/k2.webp",
-    label: "Exemplo K",
-  },
+  { before: "images/showcase/a1.webp", after: "images/showcase/a2.webp", label: "Exemplo A" },
+  { before: "images/showcase/b1.webp", after: "images/showcase/b2.webp", label: "Exemplo B" },
+  { before: "images/showcase/c1.webp", after: "images/showcase/c2.webp", label: "Exemplo C" },
+  { before: "images/showcase/d1.webp", after: "images/showcase/d2.webp", label: "Exemplo D" },
+  { before: "images/showcase/e1.webp", after: "images/showcase/e2.webp", label: "Exemplo E" },
+  { before: "images/showcase/f1.webp", after: "images/showcase/f2.webp", label: "Exemplo F" },
+  { before: "images/showcase/g1.webp", after: "images/showcase/g2.webp", label: "Exemplo G" },
+  { before: "images/showcase/h1.webp", after: "images/showcase/h2.webp", label: "Exemplo H" },
+  { before: "images/showcase/i1.webp", after: "images/showcase/i2.webp", label: "Exemplo I" },
+  { before: "images/showcase/j1.webp", after: "images/showcase/j2.webp", label: "Exemplo J" },
+  { before: "images/showcase/k1.webp", after: "images/showcase/k2.webp", label: "Exemplo K" },
 ];
 
 let baIndex = 0;
 let isDragging = false;
 
 function setClip(percent) {
+  if (!baAfter || !baHandle) return;
   baAfter.style.clipPath = `inset(0 0 0 ${percent}%)`;
   baHandle.style.left = `${percent}%`;
 }
 
 function loadSet(index) {
+  if (!baBefore || !baAfter) return;
   baIndex = (index + BA_SETS.length) % BA_SETS.length;
-
-  // troca imagens
   baBefore.src = BA_SETS[baIndex].before;
   baAfter.src = BA_SETS[baIndex].after;
-
-  // reset do slider para o meio
   setClip(50);
 
-  // dots active
   if (baDots) {
-    [...baDots.children].forEach((d, i) =>
-      d.classList.toggle("active", i === baIndex),
-    );
+    [...baDots.children].forEach((d, i) => d.classList.toggle("active", i === baIndex));
   }
 }
 
@@ -212,6 +175,7 @@ function buildDots() {
 }
 
 function setPosition(x) {
+  if (!ba) return;
   const rect = ba.getBoundingClientRect();
   let pos = (x - rect.left) / rect.width;
   pos = Math.max(0.05, Math.min(0.95, pos));
@@ -222,33 +186,37 @@ if (ba && baBefore && baAfter && baHandle) {
   buildDots();
   loadSet(0);
 
-  // Drag mouse
-  ba.addEventListener("mousedown", (e) => {
+  ba.style.touchAction = "none";
+  ba.style.cursor = "ew-resize";
+
+  const stopDragging = () => {
+    isDragging = false;
+    document.body.style.userSelect = "";
+  };
+
+  ba.addEventListener("pointerdown", (e) => {
     isDragging = true;
+    document.body.style.userSelect = "none";
+    ba.setPointerCapture(e.pointerId);
     setPosition(e.clientX);
   });
-  window.addEventListener("mouseup", () => (isDragging = false));
-  window.addEventListener("mousemove", (e) => {
+
+  ba.addEventListener("pointermove", (e) => {
     if (!isDragging) return;
     setPosition(e.clientX);
   });
 
-  // Touch
-  ba.addEventListener("touchstart", (e) => {
-    isDragging = true;
-    setPosition(e.touches[0].clientX);
-  });
-  window.addEventListener("touchend", () => (isDragging = false));
-  window.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    setPosition(e.touches[0].clientX);
+  ba.addEventListener("pointerup", stopDragging);
+  ba.addEventListener("pointercancel", stopDragging);
+  window.addEventListener("pointerup", stopDragging);
+
+  ba.addEventListener("dragstart", (e) => {
+    e.preventDefault();
   });
 
-  // Navegação
   baPrev?.addEventListener("click", () => loadSet(baIndex - 1));
   baNext?.addEventListener("click", () => loadSet(baIndex + 1));
 
-  // Teclado (opcional)
   window.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") loadSet(baIndex - 1);
     if (e.key === "ArrowRight") loadSet(baIndex + 1);
