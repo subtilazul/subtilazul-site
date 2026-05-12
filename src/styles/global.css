@@ -64,3 +64,61 @@ section {
   background: var(--brand);
 }
 
+/* Dark mode driven by html[data-theme="dark"] from public/js/main.js */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+  color: #dbe4ea;
+  background:
+    radial-gradient(circle at 10% -5%, rgba(56, 189, 248, 0.1), transparent 32%),
+    radial-gradient(circle at 92% 8%, rgba(13, 148, 136, 0.1), transparent 34%),
+    linear-gradient(180deg, #0c161a 0%, #111f24 38%, #0f1b1f 100%);
+}
+
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-white\/80,
+[data-theme="dark"] .bg-white\/90,
+[data-theme="dark"] .bg-white\/95 {
+  background-color: rgba(17, 27, 31, 0.92) !important;
+}
+
+[data-theme="dark"] .text-slate-900 {
+  color: #f2f7f9 !important;
+}
+
+[data-theme="dark"] .text-slate-700 {
+  color: #c9d5db !important;
+}
+
+[data-theme="dark"] .text-slate-600 {
+  color: #b2c0c8 !important;
+}
+
+[data-theme="dark"] .text-slate-500 {
+  color: #9bacb6 !important;
+}
+
+[data-theme="dark"] .text-slate-400 {
+  color: #89a0ad !important;
+}
+
+[data-theme="dark"] .border-slate-300,
+[data-theme="dark"] .border-slate-200,
+[data-theme="dark"] .border-white\/60 {
+  border-color: rgba(110, 132, 143, 0.45) !important;
+}
+
+[data-theme="dark"] .hover\:bg-slate-100:hover {
+  background-color: rgba(148, 163, 184, 0.15) !important;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  color: #e6eef2;
+  background-color: rgba(8, 16, 20, 0.7);
+  border-color: rgba(110, 132, 143, 0.55);
+}
+
