@@ -1,6 +1,5 @@
 ﻿// Theme toggle
 const themeToggle = document.getElementById("themeToggle");
-const themeIcon = document.querySelector(".theme-icon");
 const htmlElement = document.documentElement;
 
 const currentTheme = localStorage.getItem("theme") || "light";
@@ -8,9 +7,10 @@ htmlElement.setAttribute("data-theme", currentTheme);
 updateThemeIcon(currentTheme);
 
 if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    const current = htmlElement.getAttribute("data-theme");
-    const next = current === "light" ? "dark" : "light";
+  themeToggle.checked = currentTheme === "dark";
+
+  themeToggle.addEventListener("change", () => {
+    const next = themeToggle.checked ? "dark" : "light";
     htmlElement.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
     updateThemeIcon(next);
@@ -18,8 +18,8 @@ if (themeToggle) {
 }
 
 function updateThemeIcon(theme) {
-  if (!themeIcon) return;
-  themeIcon.textContent = theme === "light" ? "🌙" : "☀️";
+  if (!themeToggle) return;
+  themeToggle.checked = theme === "dark";
 }
 
 // Navbar scroll effect
@@ -222,3 +222,4 @@ if (ba && baBefore && baAfter && baHandle) {
     if (e.key === "ArrowRight") loadSet(baIndex + 1);
   });
 }
+

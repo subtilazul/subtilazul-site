@@ -15,22 +15,41 @@ const logos = [
 ];
 ---
 
-<section id="clientes" class="flex min-h-svh items-stretch"><div class="mx-auto grid min-h-[calc(100svh-76px)] w-full max-w-6xl place-content-center px-4 pb-8 pt-24 md:px-6 md:pb-12 md:pt-24">
+<section id="clientes" class="py-20 md:py-24"><div class="mx-auto w-full max-w-6xl px-4 md:px-6">
   <div class="mb-10 text-center">
     <h2 class="text-4xl text-slate-900 md:text-5xl">Confiam em Nós</h2>
     <p class="mx-auto mt-3 max-w-2xl text-slate-600">Uma carteira construida com dedicação, competência e confiança</p>
   </div>
 
-  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-    {logos.map(([name, info]) => (
-      <article class="rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-sm">
-        <h4 class="text-xl text-slate-900">{name}</h4>
-        <p class="mt-1 text-sm text-slate-600">{info}</p>
-      </article>
-    ))}
+  <div class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-white to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-linear-to-l from-white to-transparent"></div>
+
+    <div class="flex w-max animate-[marquee_40s_linear_infinite] gap-4 will-change-transform hover:[animation-play-state:paused]">
+      {Array.from({ length: 2 }).map((_, index) => (
+        <div class="flex shrink-0 gap-4" aria-hidden={index === 1 ? "true" : undefined}>
+          {logos.map(([name, info]) => (
+            <article class="w-70 rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-sm">
+              <h4 class="text-xl text-slate-900">{name}</h4>
+              <p class="mt-1 text-sm text-slate-600">{info}</p>
+            </article>
+          ))}
+        </div>
+      ))}
+    </div>
   </div>
 </div></section>
 
+<style>
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+</style>
 
 
 
