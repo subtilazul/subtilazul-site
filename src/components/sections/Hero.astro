@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import heroBackground from "../../assets/images/hero/subtilazul_hero.webp";
 ---
 
-<section class="relative min-h-svh overflow-hidden">
+<section class="relative mt-12 min-h-svh overflow-hidden md:mt-14">
   <Image
     src={heroBackground}
     alt=""
@@ -15,7 +15,7 @@ import heroBackground from "../../assets/images/hero/subtilazul_hero.webp";
     sizes="100vw"
   />
   <div class="absolute inset-0 -z-10 bg-[linear-gradient(125deg,rgba(6,27,45,0.78)_30%,rgba(10,73,110,0.66)_45%,rgba(25,132,172,0.52)_100%)]"></div>
-  <div class="mx-auto grid min-h-[calc(100svh-76px)] w-full max-w-6xl items-center gap-10 px-4 pb-8 pt-24 md:grid-cols-2 md:px-6 md:pb-12 md:pt-24">
+  <div class="mx-auto grid min-h-[calc(100svh-48px)] w-full max-w-6xl items-center gap-10 px-4 pb-8 pt-24 md:min-h-[calc(100svh-56px)] md:grid-cols-2 md:px-6 md:pb-12 md:pt-24">
     <div class="space-y-7">
       <p class="inline-flex rounded-full border border-cyan-100/60 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-50 backdrop-blur-sm">Higienização Técnica</p>
       <h1 class="text-5xl leading-[0.93] font-semibold text-white md:text-7xl">Higienização<br />Profissional</h1>
@@ -23,7 +23,7 @@ import heroBackground from "../../assets/images/hero/subtilazul_hero.webp";
       <p class="text-lg max-w-xl leading-relaxed text-slate-100">Especializados em higienização e lavagem de alcatifas, estofos e mobiliário. Preservamos o seu património com foco na sustentabilidade, saúde e excelência técnica.</p>
       <div class="flex flex-wrap gap-3">
         <a href="#contacto" class="rounded-full bg-cyan-700 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-cyan-900/20 transition hover:-translate-y-0.5 hover:bg-cyan-800">Solicitar Avaliação</a>
-        <a href="#servicos" class="rounded-full border border-white/65 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-cyan-200 hover:bg-white/20">Conhecer Serviços</a>
+        <a href="/servicos" class="rounded-full border border-white/65 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-cyan-200 hover:bg-white/20">Conhecer Serviços</a>
       </div>
     </div>
 

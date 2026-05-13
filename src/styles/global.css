@@ -10,16 +10,15 @@ html,
 body {
   margin: 0;
   width: 100%;
-  
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   color: var(--ink);
-  background:
+  /*background:
     radial-gradient(circle at 10% -5%, rgba(56, 189, 248, 0.14), transparent 32%),
     radial-gradient(circle at 92% 8%, rgba(13, 148, 136, 0.12), transparent 34%),
-    linear-gradient(180deg, #f8fcfc 0%, #f1f8f8 38%, #ffffff 100%);
+    linear-gradient(180deg, #f8fcfc 0%, #f1f8f8 38%, #ffffff 100%); */
 }
 
 h1,
@@ -72,7 +71,11 @@ section {
 [data-theme="dark"] body {
   color: #dbe4ea;
   background:
-    radial-gradient(circle at 10% -5%, rgba(56, 189, 248, 0.1), transparent 32%),
+    radial-gradient(
+      circle at 10% -5%,
+      rgba(56, 189, 248, 0.1),
+      transparent 32%
+    ),
     radial-gradient(circle at 92% 8%, rgba(13, 148, 136, 0.1), transparent 34%),
     linear-gradient(180deg, #0c161a 0%, #111f24 38%, #0f1b1f 100%);
 }
@@ -121,4 +124,3 @@ section {
   background-color: rgba(8, 16, 20, 0.7);
   border-color: rgba(110, 132, 143, 0.55);
 }
-
