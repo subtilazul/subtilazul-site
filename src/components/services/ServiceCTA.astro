@@ -1,0 +1,42 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const {
+  title = "Precisa de uma proposta técnica para a sua operação?",
+  description = "Partilhe o contexto do espaço e enviamos uma avaliação objetiva, com plano de intervenção e próximos passos.",
+  primaryLabel = "Solicitar Avaliação",
+  primaryHref = "#contacto",
+  secondaryLabel = "Enviar Email",
+  secondaryHref = "mailto:geral@subtilazul.pt",
+} = Astro.props;
+---
+
+<section class="rounded-3xl border border-cyan-100 bg-gradient-to-br from-cyan-50 to-white p-6 md:p-10">
+  <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+    <div class="space-y-3">
+      <h2 class="text-3xl text-slate-900 md:text-4xl">{title}</h2>
+      <p class="max-w-3xl text-slate-600">{description}</p>
+    </div>
+    <div class="flex flex-wrap gap-3 md:justify-end">
+      <a
+        href={primaryHref}
+        class="inline-flex items-center justify-center rounded-full bg-cyan-700 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-cyan-800"
+      >
+        {primaryLabel}
+      </a>
+      <a
+        href={secondaryHref}
+        class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-cyan-700 hover:text-cyan-700"
+      >
+        {secondaryLabel}
+      </a>
+    </div>
+  </div>
+</section>

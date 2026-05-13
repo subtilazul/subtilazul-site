@@ -1,19 +1,24 @@
-﻿<nav id="navbar" class="fixed inset-x-0 top-0 z-50 bg-white/80 transition-all duration-300">
+﻿---
+const isHome = Astro.url.pathname === "/";
+const navHref = (hash: string) => (isHome ? hash : `/${hash}`);
+---
+
+<nav id="navbar" class="fixed inset-x-0 top-0 z-50 bg-white/80 transition-all duration-300">
   <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-1 md:px-6 md:py-0">
-    <a href="#" class="inline-flex items-center" aria-label="SubtilAzul - Início">
+    <a href="/" class="inline-flex items-center" aria-label="SubtilAzul - Início">
       <img src="/images/logo/logo.svg" alt="SubtilAzul" class="h-10 w-auto md:h-12" loading="eager" decoding="async" />
     </a>
 
     <ul class="hidden items-center gap-7 text-sm font-medium text-slate-700 lg:flex">
-      <li><a href="#servicos" class="transition hover:text-cyan-700">Serviços</a></li>
-      <li><a href="#beneficios" class="transition hover:text-cyan-700">Benefícios</a></li>
-      <li><a href="#before-after" class="transition hover:text-cyan-700">Resultados</a></li>
-      <li><a href="#clientes" class="transition hover:text-cyan-700">Clientes</a></li>
-      <li><a href="#contacto" class="transition hover:text-cyan-700">Contacto</a></li>
+      <li><a href={navHref("#servicos")} class="transition hover:text-cyan-700">Serviços</a></li>
+      <li><a href={navHref("#beneficios")} class="transition hover:text-cyan-700">Benefícios</a></li>
+      <li><a href={navHref("#before-after")} class="transition hover:text-cyan-700">Resultados</a></li>
+      <li><a href={navHref("#clientes")} class="transition hover:text-cyan-700">Clientes</a></li>
+      <li><a href={navHref("#contacto")} class="transition hover:text-cyan-700">Contacto</a></li>
     </ul>
 
     <div class="flex items-center gap-2 md:gap-3">
-      <a href="#contacto" class="hidden rounded-full bg-cyan-700 px-5 py-1.5 text-sm font-semibold text-white shadow-sm shadow-cyan-900/20 transition hover:-translate-y-0.5 hover:bg-cyan-800 sm:inline-flex">Avaliação Gratuita</a>
+      <a href={navHref("#contacto")} class="hidden rounded-full bg-cyan-700 px-5 py-1.5 text-sm font-semibold text-white shadow-sm shadow-cyan-900/20 transition hover:-translate-y-0.5 hover:bg-cyan-800 sm:inline-flex">Avaliação Gratuita</a>
       <button id="mobileMenuBtn" class="mobile-menu-btn inline-flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-slate-300 lg:hidden" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
         <span class="block h-0.5 w-5 bg-slate-700"></span>
         <span class="block h-0.5 w-5 bg-slate-700"></span>
@@ -24,12 +29,11 @@
 
   <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white/95 lg:hidden">
     <div class="mx-auto flex w-full max-w-6xl flex-col gap-1 px-4 py-4 text-sm font-medium text-slate-700">
-      <a href="#servicos" class="rounded-lg px-3 py-2 hover:bg-slate-100">Serviços</a>
-      <a href="#beneficios" class="rounded-lg px-3 py-2 hover:bg-slate-100">Benefícios</a>
-      <a href="#before-after" class="rounded-lg px-3 py-2 hover:bg-slate-100">Resultados</a>
-      <a href="#clientes" class="rounded-lg px-3 py-2 hover:bg-slate-100">Clientes</a>
-      <a href="#contacto" class="rounded-lg px-3 py-2 hover:bg-slate-100">Contacto</a>
+      <a href={navHref("#servicos")} class="rounded-lg px-3 py-2 hover:bg-slate-100">Serviços</a>
+      <a href={navHref("#beneficios")} class="rounded-lg px-3 py-2 hover:bg-slate-100">Benefícios</a>
+      <a href={navHref("#before-after")} class="rounded-lg px-3 py-2 hover:bg-slate-100">Resultados</a>
+      <a href={navHref("#clientes")} class="rounded-lg px-3 py-2 hover:bg-slate-100">Clientes</a>
+      <a href={navHref("#contacto")} class="rounded-lg px-3 py-2 hover:bg-slate-100">Contacto</a>
     </div>
   </div>
 </nav>
-

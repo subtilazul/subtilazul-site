@@ -1,0 +1,135 @@
+---
+import Layout from "./Layout.astro";
+import Navbar from "../components/sections/Navbar.astro";
+import Footer from "../components/sections/Footer.astro";
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  intro: string;
+  eyebrow?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  breadcrumbs?: BreadcrumbItem[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  heading,
+  intro,
+  eyebrow = "Serviços SubtilAzul",
+  ctaLabel = "Pedir Avaliação Gratuita",
+  ctaHref = "#contacto",
+  breadcrumbs = [
+    { label: "Início", href: "/" },
+    { label: "Serviços", href: "/#servicos" },
+    { label: heading },
+  ],
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString();
+
+const breadcrumbJsonLd = siteUrl
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      itemListElement: breadcrumbs.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.label,
+        item: item.href
+          ? new URL(item.href, siteUrl).toString()
+          : canonical,
+      })),
+    }
+  : null;
+
+const serviceJsonLd = siteUrl
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${canonical}#service`,
+      name: heading,
+      description,
+      serviceType: heading,
+      url: canonical,
+      areaServed: "Norte de Portugal",
+      provider: {
+        "@id": `${siteUrl}/#organization`,
+      },
+    }
+  : null;
+---
+
+<Layout title={title} description={description} noindex={noindex}>
+  <Navbar />
+
+  <main id="main-content" class="pb-16 pt-24 md:pb-24 md:pt-28">
+    <section class="px-4 md:px-6">
+      <div class="mx-auto w-full max-w-7xl">
+        <nav aria-label="Breadcrumb" class="mb-6 md:mb-8">
+          <ol class="flex flex-wrap items-center gap-2 text-xs text-slate-500 md:text-sm">
+            {
+              breadcrumbs.map((crumb, index) => (
+                <>
+                  <li>
+                    {crumb.href && index < breadcrumbs.length - 1 ? (
+                      <a class="transition hover:text-cyan-700" href={crumb.href}>
+                        {crumb.label}
+                      </a>
+                    ) : (
+                      <span class="font-medium text-slate-700">{crumb.label}</span>
+                    )}
+                  </li>
+                  {index < breadcrumbs.length - 1 && <li aria-hidden="true">/</li>}
+                </>
+              ))
+            }
+          </ol>
+        </nav>
+
+        <div class="grid gap-8 rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-sm md:grid-cols-[1fr_auto] md:items-end md:gap-12 md:p-10">
+          <div class="space-y-4">
+            <p class="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-800">
+              {eyebrow}
+            </p>
+            <h1 class="text-balance text-4xl leading-tight text-slate-900 md:text-6xl">{heading}</h1>
+            <p class="max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">{intro}</p>
+          </div>
+          <div class="flex flex-col gap-3 md:items-end">
+            <a
+              href={ctaHref}
+              class="inline-flex items-center justify-center rounded-full bg-cyan-700 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-cyan-800"
+            >
+              {ctaLabel}
+            </a>
+            <p class="text-xs text-slate-500">Resposta rápida para empresas e instituições.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10 px-4 md:mt-14 md:px-6">
+      <div class="mx-auto w-full max-w-7xl space-y-10 md:space-y-14">
+        <slot />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  {serviceJsonLd && <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />}
+  {breadcrumbJsonLd && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />}
+  <script is:inline src="/js/main.js"></script>
+</Layout>

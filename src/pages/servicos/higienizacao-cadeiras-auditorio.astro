@@ -1,0 +1,166 @@
+﻿---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import ServiceHero from "../../components/services/ServiceHero.astro";
+import ServiceBenefits from "../../components/services/ServiceBenefits.astro";
+import ServiceProcess from "../../components/services/ServiceProcess.astro";
+import ServiceAreas from "../../components/services/ServiceAreas.astro";
+import SocialProof from "../../components/services/SocialProof.astro";
+import ServiceFAQ from "../../components/services/ServiceFAQ.astro";
+import ServiceCTA from "../../components/services/ServiceCTA.astro";
+---
+
+<ServiceLayout
+  title="Higienização de Cadeiras de Auditório | SubtilAzul"
+  description="Higienização profissional de cadeiras de auditório, salas de conferência e espaços institucionais no Norte de Portugal. Peça avaliação técnica B2B à SubtilAzul."
+  heading="Higienização de Cadeiras de Auditório e Salas de Conferência"
+  intro="Executamos limpeza técnica de cadeiras estofadas em contextos empresariais e institucionais, com planeamento operacional para manter conforto, imagem e durabilidade."
+  eyebrow="Serviço Especializado B2B"
+  ctaLabel="Solicitar Avaliação Técnica"
+  ctaHref="#contacto"
+  breadcrumbs={[
+    { label: "Início", href: "/" },
+    { label: "Serviços", href: "/#servicos" },
+    { label: "Higienização de Cadeiras de Auditório" },
+  ]}
+>
+  <ServiceHero
+    title="Limpeza Profissional de Cadeiras com Padrão de Qualidade Institucional"
+    description="Intervimos em auditórios, anfiteatros, salas de reunião e espaços de eventos, removendo sujidade, manchas e odores sem comprometer a operação do espaço."
+    highlights={[
+      "Intervenções adaptadas ao calendário de utilização do auditório",
+      "Metodologias específicas para tecidos, estofos e uso intensivo",
+      "Execução orientada a imagem, conforto e longevidade do mobiliário",
+    ]}
+  />
+
+  <ServiceBenefits
+    items={[
+      {
+        title: "Imagem cuidada perante utilizadores",
+        description:
+          "Cadeiras limpas e uniformes reforçam a perceção de qualidade em eventos, conferências e sessões institucionais.",
+      },
+      {
+        title: "Conforto e higiene melhorados",
+        description:
+          "A higienização técnica reduz sujidade e odores acumulados, contribuindo para melhor experiência do público.",
+      },
+      {
+        title: "Maior vida útil do mobiliário",
+        description:
+          "A manutenção periódica protege materiais e reduz o desgaste prematuro das cadeiras estofadas.",
+      },
+      {
+        title: "Operação sem interrupções críticas",
+        description:
+          "Planeamos as intervenções em janelas adequadas para minimizar impacto no funcionamento do espaço.",
+      },
+      {
+        title: "Resultados consistentes",
+        description:
+          "Processo estruturado e equipa especializada para garantir padrão de qualidade em cada intervenção.",
+      },
+      {
+        title: "Suporte técnico para manutenção",
+        description:
+          "Definimos recomendações de periodicidade e boas práticas para preservar o estado das cadeiras.",
+      },
+    ]}
+  />
+
+  <ServiceProcess
+    steps={[
+      {
+        title: "Avaliação do espaço e do estofado",
+        description:
+          "Analisamos tipologia das cadeiras, nível de utilização e necessidades específicas do auditório para definir o plano técnico.",
+      },
+      {
+        title: "Preparação da intervenção",
+        description:
+          "Organizamos zonas de trabalho e sequência de execução para garantir segurança, eficiência e fluidez operacional.",
+      },
+      {
+        title: "Higienização especializada por superfície",
+        description:
+          "Aplicamos técnicas adequadas ao material e ao estado de sujidade, com foco em eficácia e preservação do estofado.",
+      },
+      {
+        title: "Verificação final e plano recomendado",
+        description:
+          "Validamos o resultado e apresentamos orientações para manutenção contínua do conforto e da imagem do espaço.",
+      },
+    ]}
+  />
+
+  <ServiceAreas
+    areas={[
+      { name: "Porto" },
+      { name: "Braga" },
+      { name: "Guimarães" },
+      { name: "Barcelos" },
+      { name: "Vila Nova de Famalicão" },
+      { name: "Viana do Castelo" },
+      { name: "Matosinhos" },
+      { name: "Vila do Conde" },
+      { name: "Norte de Portugal", note: "Cobertura alargada mediante avaliação" },
+    ]}
+  />
+
+  <SocialProof
+    stats={[
+      { value: "30+", label: "Clientes institucionais e empresariais" },
+      { value: "100%", label: "Intervenção focada no Norte de Portugal" },
+      { value: "5+", label: "Anos de experiência no setor" },
+      { value: "B2B", label: "Especialização em ambientes profissionais" },
+    ]}
+    testimonials={[
+      {
+        quote:
+          "A equipa foi pontual e organizada, com melhoria clara no conforto e apresentação do auditório.",
+        author: "Direção Técnica",
+        role: "Entidade cultural",
+      },
+      {
+        quote:
+          "Serviço com planeamento rigoroso, sem comprometer o calendário de utilização da sala.",
+        author: "Gestão de Operações",
+        role: "Instituição",
+      },
+    ]}
+  />
+
+  <ServiceFAQ
+    items={[
+      {
+        question: "A higienização pode ser feita sem interromper eventos?",
+        answer:
+          "Sim. Planeamos a intervenção com base no calendário do espaço, privilegiando períodos de menor utilização para reduzir impacto operacional.",
+      },
+      {
+        question: "Trabalham com diferentes tipos de cadeiras estofadas?",
+        answer:
+          "Sim. Atuamos em cadeiras de auditório, conferência, reunião e outros formatos estofados, ajustando a metodologia ao material.",
+      },
+      {
+        question: "Com que periodicidade devo higienizar as cadeiras?",
+        answer:
+          "A periodicidade depende da taxa de ocupação e do tipo de utilização. Após avaliação, recomendamos um plano adequado ao espaço.",
+      },
+      {
+        question: "Como solicito uma proposta para o meu auditório?",
+        answer:
+          "Pode pedir avaliação pelo formulário de contacto. A equipa analisa as necessidades e apresenta proposta técnica orientada ao contexto B2B.",
+      },
+    ]}
+  />
+
+  <ServiceCTA
+    title="Quer elevar o padrão de higiene e conforto do seu auditório?"
+    description="Peça uma avaliação técnica sem compromisso e receba uma proposta ajustada ao tipo de cadeiras, uso do espaço e objetivos operacionais."
+    primaryLabel="Pedir Avaliação Gratuita"
+    primaryHref="#contacto"
+    secondaryLabel="Contactar por Email"
+    secondaryHref="mailto:geral@subtilazul.pt"
+  />
+</ServiceLayout>

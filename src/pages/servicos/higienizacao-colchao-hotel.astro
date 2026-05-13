@@ -1,0 +1,166 @@
+﻿---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import ServiceHero from "../../components/services/ServiceHero.astro";
+import ServiceBenefits from "../../components/services/ServiceBenefits.astro";
+import ServiceProcess from "../../components/services/ServiceProcess.astro";
+import ServiceAreas from "../../components/services/ServiceAreas.astro";
+import SocialProof from "../../components/services/SocialProof.astro";
+import ServiceFAQ from "../../components/services/ServiceFAQ.astro";
+import ServiceCTA from "../../components/services/ServiceCTA.astro";
+---
+
+<ServiceLayout
+  title="Higienização de Colchões para Hotel | SubtilAzul"
+  description="Higienização profissional de colchões para hotéis no Norte de Portugal, com metodologia técnica e foco em conforto, saúde e conformidade operacional."
+  heading="Higienização de Colchões para Hotelaria"
+  intro="Serviço especializado para hotéis, alojamentos e unidades de hospitalidade que exigem padrão elevado de higiene, conforto e preservação do enxoval de quarto."
+  eyebrow="Serviço Especializado B2B"
+  ctaLabel="Solicitar Avaliação Técnica"
+  ctaHref="#contacto"
+  breadcrumbs={[
+    { label: "Início", href: "/" },
+    { label: "Serviços", href: "/#servicos" },
+    { label: "Higienização de Colchões para Hotel" },
+  ]}
+>
+  <ServiceHero
+    title="Higiene e Conforto de Colchões com Padrão Profissional"
+    description="Executamos higienização técnica de colchões em contexto hoteleiro, com intervenção orientada à salubridade, bem-estar do hóspede e consistência de serviço."
+    highlights={[
+      "Metodologia adequada a operações com alta rotatividade de quartos",
+      "Intervenções planeadas para reduzir impacto no funcionamento diário",
+      "Foco em qualidade percebida e longevidade do ativo",
+    ]}
+  />
+
+  <ServiceBenefits
+    items={[
+      {
+        title: "Melhor experiência do hóspede",
+        description:
+          "Colchões higienizados contribuem para maior conforto e confiança na qualidade do quarto.",
+      },
+      {
+        title: "Reforço da reputação do hotel",
+        description:
+          "Padrões consistentes de higiene fortalecem a imagem da unidade e a satisfação do cliente final.",
+      },
+      {
+        title: "Preservação do investimento",
+        description:
+          "A manutenção técnica ajuda a prolongar a vida útil dos colchões e reduzir substituições antecipadas.",
+      },
+      {
+        title: "Operação adaptada à realidade hoteleira",
+        description:
+          "Planeamento por blocos/quartos para minimizar indisponibilidade e manter continuidade operacional.",
+      },
+      {
+        title: "Execução técnica padronizada",
+        description:
+          "Processo estruturado para entregar resultados previsíveis e replicáveis em diferentes tipologias de quarto.",
+      },
+      {
+        title: "Acompanhamento especializado",
+        description:
+          "Definimos periodicidade recomendada conforme taxa de ocupação e perfil de utilização da unidade.",
+      },
+    ]}
+  />
+
+  <ServiceProcess
+    steps={[
+      {
+        title: "Diagnóstico por tipologia de quarto",
+        description:
+          "Avaliamos o estado dos colchões, volume de quartos e prioridades para definir uma intervenção eficiente.",
+      },
+      {
+        title: "Planeamento operacional",
+        description:
+          "Organizamos a execução por zonas e janelas de trabalho para reduzir impacto na disponibilidade dos quartos.",
+      },
+      {
+        title: "Higienização técnica",
+        description:
+          "Aplicamos técnicas e produtos adequados ao material e nível de utilização, com foco em higiene e preservação.",
+      },
+      {
+        title: "Validação e recomendações",
+        description:
+          "Realizamos revisão final e sugerimos plano periódico de manutenção para sustentar a qualidade do serviço.",
+      },
+    ]}
+  />
+
+  <ServiceAreas
+    areas={[
+      { name: "Porto" },
+      { name: "Vila Nova de Gaia" },
+      { name: "Matosinhos" },
+      { name: "Maia" },
+      { name: "Braga" },
+      { name: "Guimarães" },
+      { name: "Viana do Castelo" },
+      { name: "Vila do Conde" },
+      { name: "Norte de Portugal", note: "Cobertura mediante avaliação" },
+    ]}
+  />
+
+  <SocialProof
+    stats={[
+      { value: "30+", label: "Clientes profissionais atendidos" },
+      { value: "100%", label: "Atuação no Norte de Portugal" },
+      { value: "5+", label: "Anos de experiência acumulada" },
+      { value: "B2B", label: "Foco em hotelaria e instituições" },
+    ]}
+    testimonials={[
+      {
+        quote:
+          "Serviço técnico e organizado, com ganhos claros na perceção de qualidade dos quartos.",
+        author: "Direção de Alojamento",
+        role: "Unidade hoteleira",
+      },
+      {
+        quote:
+          "Execução compatível com a operação diária, sem comprometer a disponibilidade da unidade.",
+        author: "Gestão Operacional",
+        role: "Hotel",
+      },
+    ]}
+  />
+
+  <ServiceFAQ
+    items={[
+      {
+        question: "Com que frequência um hotel deve higienizar colchões?",
+        answer:
+          "A periodicidade depende da ocupação, tipologia de hóspedes e política interna. Após avaliação técnica, recomendamos um plano adequado à unidade.",
+      },
+      {
+        question: "A intervenção pode ser faseada por pisos ou alas?",
+        answer:
+          "Sim. Planeamos a execução por blocos para manter o funcionamento do hotel e reduzir impacto operacional.",
+      },
+      {
+        question: "O serviço é indicado para diferentes tipos de colchão?",
+        answer:
+          "Sim. Adaptamos a metodologia ao tipo de colchão e ao estado de utilização, com foco em eficácia e preservação.",
+      },
+      {
+        question: "Como solicito proposta para a minha unidade?",
+        answer:
+          "Pode pedir avaliação através do formulário de contacto. A equipa analisa o contexto e apresenta uma proposta técnica B2B.",
+      },
+    ]}
+  />
+
+  <ServiceCTA
+    title="Quer elevar o padrão de higiene dos quartos da sua unidade?"
+    description="Solicite uma avaliação técnica sem compromisso e receba proposta ajustada à ocupação, tipologia de quartos e objetivos de qualidade do hotel."
+    primaryLabel="Pedir Avaliação Gratuita"
+    primaryHref="#contacto"
+    secondaryLabel="Contactar por Email"
+    secondaryHref="mailto:geral@subtilazul.pt"
+  />
+</ServiceLayout>

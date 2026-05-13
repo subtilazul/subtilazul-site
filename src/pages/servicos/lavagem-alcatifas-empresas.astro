@@ -1,0 +1,166 @@
+﻿---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import ServiceHero from "../../components/services/ServiceHero.astro";
+import ServiceBenefits from "../../components/services/ServiceBenefits.astro";
+import ServiceProcess from "../../components/services/ServiceProcess.astro";
+import ServiceAreas from "../../components/services/ServiceAreas.astro";
+import SocialProof from "../../components/services/SocialProof.astro";
+import ServiceFAQ from "../../components/services/ServiceFAQ.astro";
+import ServiceCTA from "../../components/services/ServiceCTA.astro";
+---
+
+<ServiceLayout
+  title="Lavagem de Alcatifas para Empresas | SubtilAzul"
+  description="Lavagem e higienização profissional de alcatifas para empresas, hotéis, auditórios e instituições no Norte de Portugal. Solicite avaliação técnica da SubtilAzul."
+  heading="Lavagem de Alcatifas para Empresas e Instituições"
+  intro="Executamos higienização técnica de alcatifas em ambientes corporativos e institucionais, com foco em imagem, salubridade e durabilidade do ativo têxtil."
+  eyebrow="Serviço Especializado B2B"
+  ctaLabel="Solicitar Avaliação Técnica"
+  ctaHref="#contacto"
+  breadcrumbs={[
+    { label: "Início", href: "/" },
+    { label: "Serviços", href: "/#servicos" },
+    { label: "Lavagem de Alcatifas para Empresas" },
+  ]}
+>
+  <ServiceHero
+    title="Higienização Profissional de Alcatifas com Padrão Corporativo"
+    description="Intervimos em áreas de circulação intensa, salas de reunião, auditórios, zonas comuns e espaços de receção, reduzindo sujidade acumulada, odores e desgaste precoce."
+    highlights={[
+      "Planeamento por janelas operacionais para reduzir impacto na atividade",
+      "Metodologias adequadas a alcatifas de pequena, média e grande dimensão",
+      "Equipa experiente em contextos empresariais e institucionais",
+    ]}
+  />
+
+  <ServiceBenefits
+    items={[
+      {
+        title: "Melhoria da imagem do espaço",
+        description:
+          "Alcatifas limpas e homogéneas reforçam a perceção de qualidade junto de clientes, colaboradores e visitantes.",
+      },
+      {
+        title: "Maior conforto e salubridade",
+        description:
+          "Remoção eficaz de sujidade e partículas contribui para ambientes interiores mais confortáveis e saudáveis.",
+      },
+      {
+        title: "Proteção do investimento",
+        description:
+          "A manutenção técnica prolonga a vida útil da alcatifa e reduz custos de substituição antecipada.",
+      },
+      {
+        title: "Execução ajustada à operação",
+        description:
+          "Intervenções organizadas para minimizar interrupções nas rotinas da empresa ou instituição.",
+      },
+      {
+        title: "Qualidade consistente",
+        description:
+          "Processo padronizado e controlo de execução para garantir resultados previsíveis em cada intervenção.",
+      },
+      {
+        title: "Suporte técnico dedicado",
+        description:
+          "Acompanhamento próximo para definir periodicidade e estratégia de higienização adequada ao espaço.",
+      },
+    ]}
+  />
+
+  <ServiceProcess
+    steps={[
+      {
+        title: "Diagnóstico técnico inicial",
+        description:
+          "Avaliamos tipologia, estado da alcatifa, áreas críticas e intensidade de utilização para definir o plano de intervenção.",
+      },
+      {
+        title: "Preparação e proteção de zonas",
+        description:
+          "Organizamos o espaço e protegemos áreas sensíveis para garantir segurança operacional durante o serviço.",
+      },
+      {
+        title: "Higienização especializada",
+        description:
+          "Aplicamos técnicas e produtos adequados ao tipo de fibra e ao nível de sujidade, com foco em eficácia e preservação.",
+      },
+      {
+        title: "Revisão final e recomendações",
+        description:
+          "Validamos o resultado e recomendamos plano de manutenção preventiva para manter desempenho e aparência.",
+      },
+    ]}
+  />
+
+  <ServiceAreas
+    areas={[
+      { name: "Porto" },
+      { name: "Vila Nova de Gaia" },
+      { name: "Maia" },
+      { name: "Matosinhos" },
+      { name: "Braga" },
+      { name: "Guimarães" },
+      { name: "Barcelos" },
+      { name: "Vila do Conde" },
+      { name: "Norte de Portugal", note: "Outras localizações sob avaliação" },
+    ]}
+  />
+
+  <SocialProof
+    stats={[
+      { value: "30+", label: "Clientes profissionais atendidos" },
+      { value: "100%", label: "Foco no Norte de Portugal" },
+      { value: "5+", label: "Anos de experiência acumulada" },
+      { value: "B2B", label: "Especialização em contexto empresarial" },
+    ]}
+    testimonials={[
+      {
+        quote:
+          "Serviço organizado, equipa profissional e resultado visível nas áreas de maior tráfego.",
+        author: "Responsável de Operações",
+        role: "Entidade empresarial",
+      },
+      {
+        quote:
+          "A intervenção foi planeada sem impactar a atividade normal e a melhoria foi imediata.",
+        author: "Coordenação de Infraestruturas",
+        role: "Instituição",
+      },
+    ]}
+  />
+
+  <ServiceFAQ
+    items={[
+      {
+        question: "Com que frequência devo higienizar alcatifas em ambiente empresarial?",
+        answer:
+          "Depende do tráfego e da utilização do espaço. Após diagnóstico técnico, recomendamos um plano periódico ajustado à realidade da operação.",
+      },
+      {
+        question: "A SubtilAzul trabalha fora do horário normal?",
+        answer:
+          "Sim. Sempre que necessário, planeamos intervenções em janelas que minimizem o impacto na atividade da empresa ou instituição.",
+      },
+      {
+        question: "O serviço é adequado para auditórios e grandes superfícies?",
+        answer:
+          "Sim. Atuamos em alcatifas de pequena, média e grande dimensão, incluindo auditórios e áreas de circulação intensa.",
+      },
+      {
+        question: "Como posso obter uma proposta?",
+        answer:
+          "Basta solicitar avaliação através do formulário de contacto. Recolhemos o contexto técnico e apresentamos uma proposta adequada ao espaço.",
+      },
+    ]}
+  />
+
+  <ServiceCTA
+    title="Vamos definir o plano ideal para as alcatifas da sua empresa?"
+    description="Solicite uma avaliação técnica sem compromisso e receba uma proposta orientada a resultados, continuidade operacional e preservação do seu investimento."
+    primaryLabel="Pedir Avaliação Gratuita"
+    primaryHref="#contacto"
+    secondaryLabel="Contactar por Email"
+    secondaryHref="mailto:geral@subtilazul.pt"
+  />
+</ServiceLayout>
