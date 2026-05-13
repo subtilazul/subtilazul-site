@@ -1,12 +1,26 @@
-﻿<section class="relative min-h-svh overflow-hidden">
-  <div class="absolute inset-0 -z-10 bg-[url('/images/hero/subtilazul_hero.webp')] bg-cover bg-center"></div>
-  <div class="absolute inset-0 -z-10 bg-[linear-gradient(125deg,rgba(6,27,45,0.78)_0%,rgba(10,73,110,0.66)_45%,rgba(25,132,172,0.52)_100%)]"></div>
+﻿---
+import { Image } from "astro:assets";
+import heroBackground from "../../assets/images/hero/subtilazul_hero.webp";
+---
+
+<section class="relative min-h-svh overflow-hidden">
+  <Image
+    src={heroBackground}
+    alt=""
+    aria-hidden="true"
+    class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+    loading="eager"
+    fetchpriority="high"
+    widths={[768, 1280, 1920]}
+    sizes="100vw"
+  />
+  <div class="absolute inset-0 -z-10 bg-[linear-gradient(125deg,rgba(6,27,45,0.78)_30%,rgba(10,73,110,0.66)_45%,rgba(25,132,172,0.52)_100%)]"></div>
   <div class="mx-auto grid min-h-[calc(100svh-76px)] w-full max-w-6xl items-center gap-10 px-4 pb-8 pt-24 md:grid-cols-2 md:px-6 md:pb-12 md:pt-24">
     <div class="space-y-7">
       <p class="inline-flex rounded-full border border-cyan-100/60 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-50 backdrop-blur-sm">Higienização Técnica</p>
-      <h1 class="text-5xl leading-[0.93] text-white md:text-7xl">Higienização<br />Profissional</h1>
-      <p class="text-lg font-medium tracking-wide text-cyan-100">Juntos hoje, pelo futuro do seu espaço</p>
-      <p class="max-w-xl text-base leading-relaxed text-slate-100">Especializados em higienização e lavagem de alcatifas, estofos e mobiliário. Preservamos o seu património com foco na sustentabilidade, saúde e excelência técnica.</p>
+      <h1 class="text-5xl leading-[0.93] font-semibold text-white md:text-7xl">Higienização<br />Profissional</h1>
+      <h2 class="text-3xl italic font-medium tracking-wide text-white">Juntos hoje, pelo futuro do seu espaço</h2>
+      <p class="text-lg max-w-xl leading-relaxed text-slate-100">Especializados em higienização e lavagem de alcatifas, estofos e mobiliário. Preservamos o seu património com foco na sustentabilidade, saúde e excelência técnica.</p>
       <div class="flex flex-wrap gap-3">
         <a href="#contacto" class="rounded-full bg-cyan-700 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-cyan-900/20 transition hover:-translate-y-0.5 hover:bg-cyan-800">Solicitar Avaliação</a>
         <a href="#servicos" class="rounded-full border border-white/65 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-cyan-200 hover:bg-white/20">Conhecer Serviços</a>
@@ -14,10 +28,10 @@
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
-      <div class="rounded-2xl border border-white/30 bg-white/12 p-5 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5"><p class="text-3xl font-semibold text-cyan-100">5+</p><p class="mt-1 text-sm text-slate-100">Anos de Experiência</p></div>
-      <div class="rounded-2xl border border-white/30 bg-white/12 p-5 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5"><p class="text-3xl font-semibold text-cyan-100">100%</p><p class="mt-1 text-sm text-slate-100">Norte de Portugal</p></div>
-      <div class="rounded-2xl border border-white/30 bg-white/12 p-5 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5"><p class="text-3xl font-semibold text-cyan-100">30+</p><p class="mt-1 text-sm text-slate-100">Clientes Satisfeitos</p></div>
-      <div class="rounded-2xl border border-white/30 bg-white/12 p-5 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5"><p class="text-3xl font-semibold text-cyan-100">∞</p><p class="mt-1 text-sm text-slate-100">Compromisso Ambiental</p></div>
+      <div class="rounded-2xl border border-white/30 bg-white/12 p-5 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5"><p class="text-3xl font-semibold text-white">5+</p><p class="mt-1 text-sm text-slate-100">Anos de Experiência</p></div>
+      <div class="rounded-2xl border border-white/30 bg-white/12 p-5 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5"><p class="text-3xl font-semibold text-white">100%</p><p class="mt-1 text-sm text-slate-100">Norte de Portugal</p></div>
+      <div class="rounded-2xl border border-white/30 bg-white/12 p-5 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5"><p class="text-3xl font-semibold text-white">30+</p><p class="mt-1 text-sm text-slate-100">Clientes Satisfeitos</p></div>
+      <div class="rounded-2xl border border-white/30 bg-white/12 p-5 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5"><p class="text-3xl font-semibold text-white">∞</p><p class="mt-1 text-sm text-slate-100">Compromisso Ambiental</p></div>
     </div>
   </div>
 </section>

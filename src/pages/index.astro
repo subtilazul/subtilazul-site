@@ -9,6 +9,115 @@ import Clients from "../components/sections/Clients.astro";
 import Contact from "../components/sections/Contact.astro";
 import Footer from "../components/sections/Footer.astro";
 import IconSprite from "../components/sections/IconSprite.astro";
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const serviceSchemas = siteUrl
+  ? [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-alcatifas`,
+        name: "Higienização de Alcatifas",
+        provider: { "@id": `${siteUrl}/#organization` },
+        serviceType: "Higienização profissional",
+        areaServed: "Norte de Portugal",
+        description:
+          "Higienização profunda de alcatifas de pequena, média e grande dimensão, incluindo áreas planas, degraus e zonas de alto tráfego.",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-cadeiras`,
+        name: "Lavagem de Cadeiras e Poltronas",
+        provider: { "@id": `${siteUrl}/#organization` },
+        serviceType: "Higienização profissional",
+        areaServed: "Norte de Portugal",
+        description:
+          "Lavagem de cadeiras de auditório, orquestra, executivo, banquete e refeição, além de sofás e poltronas com metodologia adaptada.",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-colchoes`,
+        name: "Higienização de Colchões",
+        provider: { "@id": `${siteUrl}/#organization` },
+        serviceType: "Higienização profissional",
+        areaServed: "Norte de Portugal",
+        description:
+          "Higienização de colchões para hotéis em conformidade com a Portaria 309/2015, com foco em saúde e bem-estar.",
+      },
+    ]
+  : [];
+
+const faqSchema = siteUrl
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "A avaliação é gratuita?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sim. A SubtilAzul disponibiliza avaliação gratuita e sem compromisso.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Em que zona prestam serviços?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A SubtilAzul atua em todo o Norte de Portugal, com base em Vila do Conde, Porto.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quais são os principais serviços?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Os principais serviços incluem higienização de alcatifas, lavagem de cadeiras e poltronas, e higienização de colchões.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Qual é o horário de contacto?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O horário de contacto é de segunda a sexta, das 9h às 18h.",
+          },
+        },
+      ],
+    }
+  : null;
+
+const breadcrumbSchema = siteUrl
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Início",
+          item: `${siteUrl}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Serviços",
+          item: `${siteUrl}/#servicos`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Contacto",
+          item: `${siteUrl}/#contacto`,
+        },
+      ],
+    }
+  : null;
 ---
 
 <Layout
@@ -25,5 +134,13 @@ import IconSprite from "../components/sections/IconSprite.astro";
   <Footer />
   <IconSprite />
 
+  {
+    serviceSchemas.map((item) => (
+      <script type="application/ld+json" set:html={JSON.stringify(item)} />
+    ))
+  }
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
   <script is:inline src="/js/main.js"></script>
 </Layout>
+

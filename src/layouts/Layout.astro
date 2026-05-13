@@ -4,61 +4,130 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const {
   title = "SubtilAzul - Juntos hoje, pelo futuro do seu espaço",
   description = "Higienização profissional de alcatifas, estofos e mobiliário. Preservação preventiva com foco na sustentabilidade e saúde.",
+  noindex = false,
 } = Astro.props;
 
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString();
-const ogImage = "/images/hero/subtilazul_hero.webp";
+const ogImagePath = "/images/og/subtilazul-og-1200x630.webp";
+const ogImage = Astro.site ? new URL(ogImagePath, Astro.site).toString() : ogImagePath;
+const robots = noindex ? "noindex,nofollow" : "index,follow";
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const ogImageAlt = "SubtilAzul - Higienização profissional";
+
+const structuredData =
+  siteUrl
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": `${siteUrl}/#organization`,
+          name: "SubtilAzul",
+          url: siteUrl,
+          logo: `${siteUrl}/images/logo/logo.svg`,
+          email: "geral@subtilazul.pt",
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "@id": `${siteUrl}/#website`,
+          name: "SubtilAzul",
+          url: siteUrl,
+          inLanguage: "pt-PT",
+          publisher: {
+            "@id": `${siteUrl}/#organization`,
+          },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "@id": `${siteUrl}/#localbusiness`,
+          name: "SubtilAzul",
+          url: siteUrl,
+          image: ogImage,
+          logo: `${siteUrl}/images/logo/logo.svg`,
+          email: "geral@subtilazul.pt",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Vila do Conde",
+            addressRegion: "Porto",
+            addressCountry: "PT",
+          },
+          areaServed: {
+            "@type": "AdministrativeArea",
+            name: "Norte de Portugal",
+          },
+          sameAs: [siteUrl],
+        },
+      ]
+    : [];
 ---
 
 <!doctype html>
-<html lang="pt">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<link rel="canonical" href={canonical} />
-		<meta name="robots" content="index,follow" />
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={robots} />
+    <meta name="theme-color" content="#0f6a73" />
 
-		<meta property="og:type" content="website" />
-		<meta property="og:locale" content="pt_PT" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:url" content={canonical} />
-		<meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:site_name" content="SubtilAzul" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:alt" content={ogImageAlt} />
 
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body>
-		<div class="flex flex-col min-h-screen">
-			<slot />
-		</div>
-	</body>
+    <link rel="alternate" hrefLang="pt-PT" href={canonical} />
+    <link rel="alternate" hrefLang="x-default" href={canonical} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    {
+      structuredData.map((item) => (
+        <script type="application/ld+json" set:html={JSON.stringify(item)} />
+      ))
+    }
+  </head>
+  <body>
+    <div class="flex min-h-screen flex-col">
+      <slot />
+    </div>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
+
