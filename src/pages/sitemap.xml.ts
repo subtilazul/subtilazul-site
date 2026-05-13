@@ -10,13 +10,17 @@ export const GET: APIRoute = ({ site }) => {
 
   const now = new Date().toISOString();
   const pages = [
-    {
-      loc: new URL("/", site).toString(),
-      lastmod: now,
-      changefreq: "weekly",
-      priority: "1.0",
-    },
-  ];
+    { path: "/", changefreq: "weekly", priority: "1.0" },
+    { path: "/servicos/", changefreq: "weekly", priority: "0.9" },
+    { path: "/servicos/lavagem-alcatifas-empresas/", changefreq: "monthly", priority: "0.8" },
+    { path: "/servicos/higienizacao-cadeiras-auditorio/", changefreq: "monthly", priority: "0.8" },
+    { path: "/servicos/higienizacao-colchao-hotel/", changefreq: "monthly", priority: "0.8" },
+  ].map((page) => ({
+    loc: new URL(page.path, site).toString(),
+    lastmod: now,
+    changefreq: page.changefreq,
+    priority: page.priority,
+  }));
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
