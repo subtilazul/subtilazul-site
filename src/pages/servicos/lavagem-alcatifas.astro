@@ -2,6 +2,8 @@
 import ServiceLayout from "../../layouts/ServiceLayout.astro";
 import ServiceHero from "../../components/services/ServiceHero.astro";
 import ServiceBenefits from "../../components/services/ServiceBenefits.astro";
+import ServiceUseCases from "../../components/services/ServiceUseCases.astro";
+import ServiceProblems from "../../components/services/ServiceProblems.astro";
 import ServiceProcess from "../../components/services/ServiceProcess.astro";
 import ServiceAreas from "../../components/services/ServiceAreas.astro";
 import SocialProof from "../../components/services/SocialProof.astro";
@@ -10,12 +12,12 @@ import ServiceCTA from "../../components/services/ServiceCTA.astro";
 ---
 
 <ServiceLayout
-  title="Lavagem de Alcatifas para Empresas | SúbtilAzul"
+  title="Lavagem e Higienização Profissionalde Alcatifas"
   description="Lavagem e higienização profissional de alcatifas para empresas, hotéis, auditórios e instituições no Norte de Portugal. Solicite avaliação técnica da SúbtilAzul."
-  heading="Lavagem de Alcatifas B2B"
+  heading="Lavagem de Alcatifas para Empresas, Hotéis e Auditórios"
   intro="Executamos higienização técnica de alcatifas em ambientes corporativos e institucionais, com foco em imagem, salubridade e durabilidade do ativo têxtil."
   eyebrow="Serviço Especializado B2B"
-  ctaLabel="Solicitar Avaliação Técnica"
+  ctaLabel="Pedir Orçamento"
   ctaHref="#contacto"
   breadcrumbs={[
     { label: "Início", href: "/" },
@@ -68,6 +70,7 @@ import ServiceCTA from "../../components/services/ServiceCTA.astro";
       },
     ]}
   />
+
 
   <ServiceProcess
     steps={[
@@ -131,6 +134,56 @@ import ServiceCTA from "../../components/services/ServiceCTA.astro";
     ]}
   />
 
+  <ServiceUseCases
+    items={[
+      {
+        title: "Escritórios com tráfego diário elevado",
+        description:
+          "Ideal para zonas com circulação constante, onde a acumulação de sujidade afeta imagem e conforto.",
+      },
+      {
+        title: "Hotéis e áreas de receção",
+        description:
+          "Faz sentido quando a primeira impressão do espaço é crítica para a experiência do cliente.",
+      },
+      {
+        title: "Auditórios e salas de eventos",
+        description:
+          "Adequado para espaços com uso intensivo e necessidade de manutenção regular entre ciclos de utilização.",
+      },
+      {
+        title: "Instituições com plano de manutenção",
+        description:
+          "Recomendado para operações que precisam de previsibilidade, periodicidade e controlo de qualidade.",
+      },
+    ]}
+  />
+
+  <ServiceProblems
+    items={[
+      {
+        title: "Alcatifas com manchas e aspeto envelhecido",
+        description:
+          "Recuperamos aparência e uniformidade visual, reduzindo sinais de desgaste em áreas críticas.",
+      },
+      {
+        title: "Odores persistentes em zonas comuns",
+        description:
+          "Atuamos na remoção de sujidade acumulada que contribui para odores e desconforto no ambiente.",
+      },
+      {
+        title: "Perda de conforto e perceção de higiene",
+        description:
+          "Melhoramos a salubridade do espaço para utilizadores, equipas e visitantes.",
+      },
+      {
+        title: "Falta de plano técnico de manutenção",
+        description:
+          "Definimos uma estratégia de higienização periódica ajustada ao nível de utilização do espaço.",
+      },
+    ]}
+  />
+  
   <ServiceFAQ
     items={[
       {

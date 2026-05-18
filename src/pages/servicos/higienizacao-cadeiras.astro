@@ -2,6 +2,8 @@
 import ServiceLayout from "../../layouts/ServiceLayout.astro";
 import ServiceHero from "../../components/services/ServiceHero.astro";
 import ServiceBenefits from "../../components/services/ServiceBenefits.astro";
+import ServiceUseCases from "../../components/services/ServiceUseCases.astro";
+import ServiceProblems from "../../components/services/ServiceProblems.astro";
 import ServiceProcess from "../../components/services/ServiceProcess.astro";
 import ServiceAreas from "../../components/services/ServiceAreas.astro";
 import SocialProof from "../../components/services/SocialProof.astro";
@@ -64,6 +66,56 @@ import ServiceCTA from "../../components/services/ServiceCTA.astro";
         title: "Suporte técnico para manutenção",
         description:
           "Definimos recomendações de periodicidade e boas práticas para preservar o estado das cadeiras.",
+      },
+    ]}
+  />
+
+  <ServiceUseCases
+    items={[
+      {
+        title: "Auditórios com utilização frequente",
+        description:
+          "Indicado para espaços com ocupação regular, onde a limpeza das cadeiras impacta conforto e imagem.",
+      },
+      {
+        title: "Salas de conferência e formação",
+        description:
+          "Faz sentido em ambientes corporativos que recebem equipas, clientes e parceiros com frequência.",
+      },
+      {
+        title: "Anfiteatros de instituições de ensino",
+        description:
+          "Adequado para locais de alta rotação, com necessidade de manutenção técnica ao longo do ano.",
+      },
+      {
+        title: "Espaços culturais e de eventos",
+        description:
+          "Recomendado para manter padrão visual e higiénico entre temporadas e programações intensas.",
+      },
+    ]}
+  />
+
+  <ServiceProblems
+    items={[
+      {
+        title: "Manchas visíveis no estofado",
+        description:
+          "Tratamos sujidade acumulada que compromete a aparência e a perceção de qualidade do espaço.",
+      },
+      {
+        title: "Odores e sensação de ambiente fechado",
+        description:
+          "Reduzimos focos de odor nas cadeiras, melhorando conforto para o público e utilizadores.",
+      },
+      {
+        title: "Desgaste acelerado por falta de manutenção",
+        description:
+          "Aplicamos processos que ajudam a preservar materiais e prolongar a vida útil do mobiliário.",
+      },
+      {
+        title: "Dificuldade em intervir sem parar a operação",
+        description:
+          "Planeamos a execução por janelas operacionais para minimizar impacto no calendário do espaço.",
       },
     ]}
   />
