@@ -12,9 +12,8 @@ export const GET: APIRoute = ({ site }) => {
   const pages = [
     { path: "/", changefreq: "weekly", priority: "1.0" },
     { path: "/servicos/", changefreq: "weekly", priority: "0.9" },
-    { path: "/servicos/lavagem-alcatifas-empresas/", changefreq: "monthly", priority: "0.8" },
-    { path: "/servicos/higienizacao-cadeiras-auditorio/", changefreq: "monthly", priority: "0.8" },
-    { path: "/servicos/higienizacao-colchao-hotel/", changefreq: "monthly", priority: "0.8" },
+    { path: "/servicos/lavagem-alcatifas/", changefreq: "monthly", priority: "0.8" },
+    { path: "/servicos/higienizacao-cadeiras/", changefreq: "monthly", priority: "0.8" },
   ].map((page) => ({
     loc: new URL(page.path, site).toString(),
     lastmod: now,

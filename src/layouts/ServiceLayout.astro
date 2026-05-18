@@ -1,6 +1,7 @@
 ---
 import Layout from "./Layout.astro";
 import Navbar from "../components/sections/Navbar.astro";
+import Contact from "../components/sections/Contact.astro";
 import Footer from "../components/sections/Footer.astro";
 
 interface BreadcrumbItem {
@@ -97,15 +98,15 @@ const serviceJsonLd = siteUrl
               ))
             }
           </ol>
-        </nav>
-
-
+        </nav>  
 
     <section class="mt-10 px-4 md:mt-14 md:px-6">
       <div class="mx-auto w-full max-w-7xl space-y-10 md:space-y-14">
         <slot />
       </div>
+      <Contact />
     </section>
+    
   </main>
 
   <Footer />
