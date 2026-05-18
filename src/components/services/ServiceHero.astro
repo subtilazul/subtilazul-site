@@ -22,14 +22,11 @@ const {
 } = Astro.props;
 ---
 
-<section class="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-sm md:p-10">
-  <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-    <div class="space-y-4">
-      <p class="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-800">
-        {eyebrow}
-      </p>
-      <h1 class="text-balance text-4xl leading-tight text-slate-900 md:text-6xl">{title}</h1>
-      <p class="max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">{description}</p>
+<section class=" ">
+  <div class="grid gap-6">
+    <div class="space-y-4">      
+      <h1 class="text-4xl text-slate-900 md:text-4xl">{title}</h1>
+      <p class="max-w-6xl text-base leading-relaxed text-slate-600 md:text-lg">{description}</p>
     </div>
 
     <div class="flex flex-wrap items-center gap-3 md:justify-end">
@@ -39,12 +36,7 @@ const {
       >
         {primaryCtaLabel}
       </a>
-      <a
-        href={secondaryCtaHref}
-        class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-cyan-700 hover:text-cyan-700"
-      >
-        {secondaryCtaLabel}
-      </a>
+      
     </div>
   </div>
 

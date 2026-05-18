@@ -8,7 +8,7 @@ interface Props {
 }
 
 const {
-  title = "SubtilAzul - Juntos hoje, pelo futuro do seu espaço",
+  title = "Súbtilazul - Juntos hoje, pelo futuro do seu espaço",
   description = "Higienização profissional de alcatifas, estofos e mobiliário. Preservação preventiva com foco na sustentabilidade e saúde.",
   noindex = false,
 } = Astro.props;
@@ -18,7 +18,7 @@ const ogImagePath = "/images/og/subtilazul-og-1200x630.webp";
 const ogImage = Astro.site ? new URL(ogImagePath, Astro.site).toString() : ogImagePath;
 const robots = noindex ? "noindex,nofollow" : "index,follow";
 const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
-const ogImageAlt = "SubtilAzul - Higienização profissional";
+const ogImageAlt = "Súbtilazul - Higienização profissional";
 
 const structuredData =
   siteUrl
@@ -27,7 +27,7 @@ const structuredData =
           "@context": "https://schema.org",
           "@type": "Organization",
           "@id": `${siteUrl}/#organization`,
-          name: "SubtilAzul",
+          name: "Súbtilazul",
           url: siteUrl,
           logo: `${siteUrl}/images/logo/logo.svg`,
           email: "geral@subtilazul.pt",
@@ -36,7 +36,7 @@ const structuredData =
           "@context": "https://schema.org",
           "@type": "WebSite",
           "@id": `${siteUrl}/#website`,
-          name: "SubtilAzul",
+          name: "Súbtilazul",
           url: siteUrl,
           inLanguage: "pt-PT",
           publisher: {
@@ -47,7 +47,7 @@ const structuredData =
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "@id": `${siteUrl}/#localbusiness`,
-          name: "SubtilAzul",
+          name: "Súbtilazul",
           url: siteUrl,
           image: ogImage,
           logo: `${siteUrl}/images/logo/logo.svg`,
@@ -84,7 +84,7 @@ const structuredData =
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_PT" />
-    <meta property="og:site_name" content="SubtilAzul" />
+    <meta property="og:site_name" content="Súbtilazul" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
