@@ -10,7 +10,7 @@ const navHref = (hash: string) => (isHome ? hash : `/${hash}`);
     </a>
 
     <ul class="hidden items-center gap-7 text-sm font-medium text-slate-700 lg:flex">
-      <li><a href={navHref("#servicos")} class="transition hover:text-cyan-700">Serviços</a></li>
+      <li><a href={navHref("/servicos")} class="transition hover:text-cyan-700">Serviços</a></li>
       <li><a href={navHref("#beneficios")} class="transition hover:text-cyan-700">Benefícios</a></li>
       <li><a href={navHref("#before-after")} class="transition hover:text-cyan-700">Resultados</a></li>
       <li><a href={navHref("#clientes")} class="transition hover:text-cyan-700">Clientes</a></li>
